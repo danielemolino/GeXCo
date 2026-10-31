@@ -1,0 +1,86 @@
+# Encoder/denoiser architecture fields describe the fixed paper model; unsupported changes raise an error.
+encoder:
+  input_size: 128
+  patch_size: 8
+  embed_dim: 128
+  depth: 12
+  num_heads: 4
+  mlp_ratio: 4.0
+  checkpoint: null              # pretrained world-model best.pt
+  source: online
+  use_projector: true
+  projector_hidden_dim: 512
+  projector_output_dim: 128
+  pose_scale_learnable: true
+  trainable: true
+
+vae:
+  name: maisi
+  checkpoint: null
+  spatial_downsample: 4
+  latent_channels: 4
+  scale_factor: 0.941389799118042
+
+denoiser:
+  channels: [64, 128, 256, 512]
+  attention_levels: [2, 3]
+  attention_head_channels: 32
+  res_blocks_per_level: 2
+  input_channels: 132
+  output_channels: 4
+  include_spacing_input: true
+  num_class_embeds: 128
+  resblock_updown: true
+  include_fc: true
+
+training:
+  resume: null  # Resume last.pt at an epoch boundary, retaining the original total epoch target.
+  manifest: null
+  output_dir: runs/reconstruction
+  epochs: 200
+  batch_size: 32
+  optimizer: adam
+  betas: [0.9, 0.999]
+  lr_denoiser: 1.0e-4
+  lr_encoder: 1.0e-5
+  lr_schedule: polynomial
+  lr_polynomial_power: 2.0
+  cfg_drop_prob: 0.1
+  seed: 42
+  num_workers: 8
+  amp: false
+  validation: false  # Optional PSNR/SSIM monitoring on five fixed training samples.
+
+rectified_flow:
+  num_train_timesteps: 1000
+  use_discrete_timesteps: false
+  use_timestep_transform: true
+  sample_method: uniform
+  transform_scale: 1.0
+  configured_distribution_scale: 1.4  # inactive for uniform sampling
+  velocity_target: data_minus_noise
+
+inference:
+  ode_steps: 30
+  guidance_scale: 1.5
+  seed: 0
+  conditioning_cache: true
+  seed_policy: per_case_fixed
+
+data:
+  volume_size: 128
+  hu_clip: [-1000, 1000]
+  views: [0, 90]
+  voxel_spacing_mm: [3.0, 3.0, 3.0]
+
+drr:
+  detector_axis_convention: standard
+  density_mode: diffdrr
+  stats_path: configs/drr_train_global_stats.json
+  normalization: dataset_percentile_fixed
+  source_to_detector_mm: 1500
+  source_to_patient_mm: 972
+  render_pixel_size_mm: 1.2
+  render_detector_size: 512
+  effective_pixel_size_mm: 4.8
+  detector_size: 128

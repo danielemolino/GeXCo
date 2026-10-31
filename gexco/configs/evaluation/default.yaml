@@ -1,0 +1,25 @@
+# Use --metrics volume for a short CPU-only smoke. CT-Net is bundled; segmentation downloads its weights.
+metrics: [volume, reprojection, segmentation, classification, frd]
+volume:
+  hu_clip: [-1000, 1000]
+  data_range: 2000
+reprojection:
+  density_mode: diffdrr
+  normalization: fixed_training_percentiles
+  data_range: 1.0  # Projection intensity units; the input CT is clipped in HU.
+segmentation:
+  version: 2.18.0
+  device: gpu
+  num_structures: 29
+  tolerance_mm: 3.0
+  missing_structure_hd95_mm: 665.1075101064489  # 384 * sqrt(3); either mask empty, both empty excluded
+classification:
+  checkpoint: bundled:ctnet  # Resolved relative to the installed package; a custom checkpoint can override it.
+  labels: null
+  slice_axis: 0
+  spatial_pool_size: 14
+frd:
+  implementation: frd-score
+  version: 1.0.1
+  frd_version: v1
+  num_workers: 1

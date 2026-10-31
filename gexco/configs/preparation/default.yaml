@@ -1,0 +1,21 @@
+ct:
+  shape: [128, 128, 128]
+  spacing_mm: [3.0, 3.0, 3.0]
+  hu_clip: [-1000, 1000]
+drr:
+  density_mode: diffdrr
+  orientation: AP
+  angles_deg: [-90, -75, -60, -45, -30, -15, 0, 15, 30, 45, 60, 75, 90]
+  source_to_detector_mm: 1500.0
+  source_to_patient_mm: 972.0
+  detector_size: 512
+  pixel_size_mm: 1.2
+  output_size: 128
+  stored_sampling: direct
+  rotate_canonical_k: 0
+hdf5:
+  shard_size: 1000
+  dtype: float32
+latents:
+  seed: 42
+  sample_posterior: true  # MONAI encode_stage_2_inputs, as in the original extraction.

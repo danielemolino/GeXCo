@@ -1,0 +1,25 @@
+{
+  "filename": "ctnet.pt",
+  "sha256": "3398528e20ef8cac6b411703cf2dbe508c8ca0a2d492fd4231a065947b27ab67",
+  "size_bytes": 49061027,
+  "label_columns": [
+    "Medical material",
+    "Arterial wall calcification",
+    "Cardiomegaly",
+    "Pericardial effusion",
+    "Coronary artery wall calcification",
+    "Hiatal hernia",
+    "Lymphadenopathy",
+    "Emphysema",
+    "Atelectasis",
+    "Lung nodule",
+    "Lung opacity",
+    "Pulmonary fibrotic sequela",
+    "Pleural effusion",
+    "Mosaic attenuation pattern",
+    "Peribronchial thickening",
+    "Consolidation",
+    "Bronchiectasis",
+    "Interlobular septal thickening"
+  ]
+}

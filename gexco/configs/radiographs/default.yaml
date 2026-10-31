@@ -1,0 +1,37 @@
+# Metadata calibration used for the paper radiographs; no CT inputs.
+target_isocenter_spacing_mm: 0.7776
+output_size: 512
+stats_path: configs/drr_train_global_stats.json
+detector_spacing_default_mm: 0.194444
+source_detector_default_mm: 1800.0
+source_support_gap_default_mm: 50.0
+thorax_depth_mm:
+  frontal: 250.0
+  lateral: 306.0
+# Keys: Manufacturer|ManufacturerModelName|Rows|Columns.
+detector_spacing_donors_mm:
+  "GE MEDICAL SYSTEMS|Revolution XQi ADS_28.2|2022|2022": 0.19444444
+  "GE MEDICAL SYSTEMS|Revolution XQi ADS_28.2|2022|1736": 0.19444444
+  "GE MEDICAL SYSTEMS|Revolution XQi ADS_28.4|2022|2022": 0.19444444
+  "GE MEDICAL SYSTEMS|Revolution XQi ADS_28.4|2022|1736": 0.19444444
+  "\"GE Healthcare\"|\"Thunder Platform\"|2021|2021": 0.1946535
+  "DeJarnette Research Systems|ImageShare CR|1760|2140": 0.2
+  "DeJarnette Research Systems|ImageShare CR|2140|1760": 0.2
+  "GE MEDICAL SYSTEMS|Revolution XQi ADS_29.2|2022|2022": 0.19444444
+  "GE MEDICAL SYSTEMS|Revolution XQi ADS_28.4|2022|1876": 0.19444444
+  "GE MEDICAL SYSTEMS|Revolution XQi ADS_29.2|2022|1736": 0.19444444
+  "\"GE Healthcare\"|\"Thunder Platform\"|2021|1793": 0.194639
+  "\"GE Healthcare\"|\"Thunder Platform\"|2021|1766": 0.194639
+  "\"GE Healthcare\"|\"Thunder Platform\"|2021|1775": 0.194639
+  "\"GE Healthcare\"|\"Thunder Platform\"|2021|1788": 0.194639
+  "\"GE Healthcare\"|\"Thunder Platform\"|2021|1785": 0.194639
+  "GE MEDICAL SYSTEMS|Revolution XQi ADS_28.4|2022|1766": 0.19444444
+  "GE MEDICAL SYSTEMS|Revolution XQi ADS_29.2|2022|1846": 0.19444444
+  "GE MEDICAL SYSTEMS|Revolution XQi ADS_29.2|2022|1956": 0.19444444
+  "GE MEDICAL SYSTEMS|Revolution XQi ADS_29.2|2022|2020": 0.19444444
+  "GE MEDICAL SYSTEMS|Revolution XQi ADS_29.2|2022|1536": 0.19444444
+  "GE MEDICAL SYSTEMS|Revolution XQi ADS_29.2|2022|1706": 0.19444444
+  "GE MEDICAL SYSTEMS|Revolution XQi ADS_28.4|2022|1966": 0.19444444
+  "GE MEDICAL SYSTEMS|ADS_1.0|2022|2022": 0.2
+  "GE MEDICAL SYSTEMS|Revolution XQi ADS_28.2|2022|1556": 0.19444444
+  "GE MEDICAL SYSTEMS|Revolution XRd ADS_28.2|2011|2016": 0.19478723

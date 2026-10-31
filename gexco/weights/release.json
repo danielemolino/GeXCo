@@ -1,0 +1,16 @@
+{
+  "tag": "v1.0.0",
+  "release_url": "https://github.com/danielemolino/GeXCo/releases/tag/v1.0.0",
+  "assets": {
+    "gexco.pt": {
+      "url": "https://github.com/danielemolino/GeXCo/releases/download/v1.0.0/gexco.pt",
+      "sha256": "3e507d274e97cf42f9943e557bca2db817327e48997bab71ed54982a7e16ce2c",
+      "size_bytes": 735041991
+    },
+    "world_model.pt": {
+      "url": "https://github.com/danielemolino/GeXCo/releases/download/v1.0.0/world_model.pt",
+      "sha256": "2bf273df4fe28bd384785e31c23407a0bbbb7a6fb8426316ba28cf0ef00203e5",
+      "size_bytes": 14511731
+    }
+  }
+}

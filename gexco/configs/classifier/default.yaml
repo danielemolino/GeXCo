@@ -1,0 +1,12 @@
+# Independent evaluation model; never train this model on generated CTs.
+train_volumes: null
+train_labels: null
+validation_volumes: null  # A held-out set of real training patients.
+validation_labels: null
+output_dir: runs/ctnet
+imagenet_init: true
+epochs: 100
+batch_size: 32
+lr: 0.0001
+num_workers: 8
+seed: 42

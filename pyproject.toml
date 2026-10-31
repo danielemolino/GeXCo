@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools==80.9.0", "wheel==0.45.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gexco"
+version = "1.0.0"
+description = "Geometry-aware world-model conditioning for biplanar X-ray-to-CT reconstruction"
+readme = "README.md"
+requires-python = ">=3.11,<3.13"
+license = {text = "Apache-2.0"}
+authors = [
+  {name = "Daniele Molino"},
+  {name = "Camillo Maria Caruso"},
+  {name = "Filippo Ruffini"},
+  {name = "Valerio Guarrasi"},
+  {name = "Paolo Soda"},
+]
+dynamic = ["dependencies"]
+
+[project.scripts]
+gexco = "gexco.cli:main"
+make-drr = "gexco.data.drr_rendering:main"
+prepare-xray = "gexco.data.radiographs:main"
+export-hdf5 = "gexco.data.export_hdf5:main"
+pretrain-wm = "gexco.pretraining.train:main"
+extract-latents = "gexco.data.extract_latents:main"
+train-gen = "gexco.reconstruction.train:main"
+infer = "gexco.reconstruction.inference:main"
+evaluate = "gexco.evaluation.run_suite:main"
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+
+[tool.setuptools.package-data]
+gexco = ["configs/**/*.yaml", "configs/*.json", "weights/*.pt", "weights/*.md", "weights/*.json"]
+
+[tool.setuptools.packages.find]
+include = ["gexco*"]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"

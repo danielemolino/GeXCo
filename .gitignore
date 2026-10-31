@@ -1,0 +1,51 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+
+# IDE and OS
+.DS_Store
+.idea/
+.vscode/
+
+# Data, weights, and experiment products
+/data/
+/datasets/
+/checkpoints/
+/weights/
+/runs/
+/outputs/
+/predictions/
+/wandb/
+*.ckpt
+*.pth
+*.pt
+*.nii
+*.nii.gz
+
+# Local configuration
+.env
+*.local.yaml
+
+# Additional generated payloads and local evaluation caches
+*.h5
+*.hdf5
+*.tif
+*.tiff
+*.npy
+*.npz
+*.partial
+/evaluation/
+/build/
+/dist/
+# Single CC BY 3.0 LIDC-IDRI CT128 example used by the inference guide.
+!/examples/ct128.nii.gz
+# The CT-Net evaluation checkpoint is explicitly distributed with this release.
+!/gexco/weights/ctnet.pt

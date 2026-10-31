@@ -1,0 +1,59 @@
+encoder:
+  input_size: 128
+  patch_size: 8
+  embed_dim: 128
+  depth: 12
+  num_heads: 4
+  mlp_ratio: 4.0
+  in_channels: 1
+  pose_encoding: sinusoidal_absolute_angle
+  pose_scale_learnable: true
+  pose_scale_init: 0.1
+  use_cls_token: false
+
+predictor:
+  embed_dim: 128
+  depth: 3
+  num_heads: 4
+  mlp_ratio: 4.0
+  use_adaln: true
+  action_mode: delta
+  use_action_mlp_embed: false
+
+projector:
+  enabled: true
+  hidden_dim: 512
+  output_dim: 128
+  normalization: batchnorm
+
+training:
+  resume: null  # Resume last.pt at an epoch boundary, retaining the original total epoch target.
+  num_targets: 8  # LeWorldModel default, not tuned for GeXCo; no replacement.
+  epochs: 100
+  batch_size: 64
+  optimizer: adamw
+  betas: [0.9, 0.999]
+  weight_decay_schedule: cosine
+  weight_decay_initial: 0.04
+  weight_decay_final: 0.4
+  lr_schedule: cosine
+  lr_warmup_epochs: 10
+  lr_init: 2.0e-5
+  lr_peak: 1.0e-4
+  lr_final: 1.0e-6
+  seed: 42
+  num_workers: 8
+
+sigreg:
+  lambda: 0.1  # LeWorldModel default, not tuned for GeXCo.
+  knots: 17
+  projections: 1024
+
+data:
+  validation_fraction: 0.1  # Patient-disjoint subset of training only
+  manifest: null
+  stats_path: configs/drr_train_global_stats.json
+  normalization: dataset_percentile_fixed
+  angles: [-90, -75, -60, -45, -30, -15, 0, 15, 30, 45, 60, 75, 90]
+  image_size: 128
+  use_real_data: false

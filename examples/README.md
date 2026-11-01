@@ -14,20 +14,6 @@ TCIA lists the LIDC-IDRI image data under the
 This example is an adapted copy of one CT volume. The CT data retains its source
 license; the repository's Apache-2.0 license applies to code, not to the CT.
 
-Suggested attribution: “LIDC-IDRI, The Cancer Imaging Archive (TCIA), subject
-LIDC-IDRI-0001, https://doi.org/10.7937/K9/TCIA.2015.LO9QL9SX, CC BY 3.0.
-Example volume reoriented, clipped, resampled to 128³ at 3 mm, and converted to int16.”
-
-Dataset citation: Armato SG III et al. *Data From LIDC-IDRI* [Data set]. The
-Cancer Imaging Archive (2015). https://doi.org/10.7937/K9/TCIA.2015.LO9QL9SX.
-
-TCIA also requests this acknowledgement in publications and grant applications:
-
-> The authors acknowledge the National Cancer Institute and the Foundation for
-> the National Institutes of Health, and their critical role in the creation of
-> the free publicly available LIDC/IDRI Database used in this study.
-
 Run the [inference example](../README.md#inference) to preprocess this CT onto
 the reconstruction reference grid, render frontal and lateral DRRs, reconstruct
-the volume, and compare prediction with reference. The offline [smoke test](../tests/README.md#pipeline-smoke)
-remains procedural and does not require this clinical example.
+the volume, and compare prediction with reference.

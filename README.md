@@ -3,7 +3,7 @@
 
   <h1>Geometry-Aware World-Model Conditioning<br/>for Biplanar X-Ray-to-CT Reconstruction</h1>
 
-  <p><strong>Daniele Molino · Camillo Maria Caruso · Filippo Ruffini · Valerio Guarrasi · Paolo Soda</strong></p>
+  <p><strong>Daniele Molino · Camillo Maria Caruso · Filippo Ruffini · Valerio Guarrasi · Paolo Soda </strong></p>
 
   <p>World-model representations · Calibrated ray lifting · Rectified-flow CT synthesis</p>
 

@@ -233,6 +233,7 @@ This work was supported by Fondo di Beneficenza Intesa Sanpaolo S.p.A.,
 project ID B/2025/0360. The volumetric autoencoder builds on MONAI MAISI, and
 SIGReg follows LeWorldModel/LeJEPA.
 
+
 ## License
 
 Copyright 2026 Daniele Molino, Camillo Maria Caruso, Filippo Ruffini, Valerio

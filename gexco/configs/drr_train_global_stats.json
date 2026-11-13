@@ -1,0 +1,20 @@
+{
+  "train_global": {
+    "min": 0.0,
+    "max": 12.32058048248291,
+    "mean": 3.3076066768207677,
+    "std": 2.103273188771119,
+    "p1": 0.012032000471181907,
+    "p99": 7.478828292876366
+  },
+  "hdf5": {
+    "resolution": 128,
+    "completed_shards": 33,
+    "pixel_count": 7016169472,
+    "clipped_pixel_count": 391,
+    "clipped_pixel_fraction": 5.572841442333963e-08,
+    "lung_pixel_count": 2609048070,
+    "clipped_lung_pixel_count": 45,
+    "clipped_lung_pixel_fraction": 1.7247669951899352e-08
+  }
+}

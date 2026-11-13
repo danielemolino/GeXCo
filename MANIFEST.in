@@ -1,0 +1,3 @@
+include requirements.txt LICENSE
+recursive-include gexco/configs *.yaml *.json
+recursive-include gexco/weights *.pt *.md *.json
